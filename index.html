@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+  <link rel="stylesheet" href="node_modules/angular-material/default-theme.css">
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/angular-animate/angular-animate.js"></script>
+  <script src="node_modules/angular-aria/angular-aria.js"></script>
+  <script src="node_modules/angular-material/angular-material.js"></script>
+  <script src="node_modules/angular-messages/angular-messages.js"></script>
+  <script src="node_modules/angular-aria/angular-aria.js"></script>
+
+  <title></title>
+</head>
+<body ng-app="myApp">
+  <div ng-controller="appCtrl as ac">
+
+      <div layout="row">
+        <div flex="33">
+          <form name="userForm" ng-submit="ac.submit()">
+
+          <md-input-container>
+            <label>User Name</label>
+            <input name="userName" ng-model="userName" required md-maxlength="10" minlength="4">
+            <div ng-messages="userForm.userName.$error" >
+              <div ng-message="required">*Required Field</div>
+              <div ng-message="md-maxlength">Username must not be longer than 10 characters.</div>
+              <div ng-message="minlength">Username must not be shorter than 4 characters.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container>
+            <label>Email</label>
+            <input type="email" name="email" ng-model="email" required>
+            <div ng-messages="userForm.email.$error" >
+              <div ng-message="required">*Required Field</div>
+              <div ng-message="email">Must be a valid email address.</div>
+            </div>
+          </md-input-container>
+        </form>
+        </div> <!-- flex 33 -->
+
+        <div flex="66">
+
+          <md-button class="md-raised md-primary" type="submit" ng-click="click">
+              Button
+          </md-button>
+
+        </div> <!-- flex 66 -->
+
+      </div> <!-- row -->
+
+  </div> <!-- controller -->
+
+<script src="app.js"></script>
+</body>
+</html>
