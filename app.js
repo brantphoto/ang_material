@@ -23,7 +23,11 @@ angular.module('myApp')
         };
 
         vm.changeSlide = function() {
+          if (vm.currentIndex === vm.slides.length - 1) {
+            vm.currentIndex = 0;
+          } else {
           vm.currentIndex++;
+          }
         };
 
      }]);
