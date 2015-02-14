@@ -21,6 +21,13 @@ body {
     left: 0;
 }
 
+.cirle-center {
+  display: inherit;
+  /*text-align:center;*/
+  /*display: block;*/
+  margin: 0 auto;
+}
+
 /*h1 > span, h3 > span {*/
     /*background-color: rgba(244, 249, 251, 0.80);*/
     /*line-height: 2;*/
