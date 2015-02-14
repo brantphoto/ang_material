@@ -33,6 +33,8 @@
             </div>
           </md-input-container>
         </form>
+        <!--<md-progress-circular md-mode="determinate" value="{{ac.determinateValue}}" md-diameter="100"></md-progress-circular>-->
+
         </div> <!-- flex 33 -->
 
         <div flex="66">
@@ -45,13 +47,15 @@
 
       </div> <!-- row -->
 
-      <div class="slider">
+      <div layout="row" layout-align="center">
+        <div class="slider">
           <div ng-repeat="slide in ac.slides"
-                ng-hide="ac.currentIndex !== $index"
-                class="slide slide-animation">
-              <h1 class="title"><span>{{slide.quote}}</span></h1>
+            ng-hide="ac.currentIndex !== $index"
+            class="slide slide-animation">
+            <h1 class="title"><span>{{slide.quote}}</span></h1>
           </div>
-      </div> 
+        </div> 
+      </div>
 
   </div> <!-- controller -->
 

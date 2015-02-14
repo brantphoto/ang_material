@@ -1,8 +1,8 @@
 angular.module('myApp', ['ngMaterial', 'ngAnimate', 'ngMessages', 'ngAria']);
 
 angular.module('myApp')
-  .controller('appCtrl', ['$scope',
-      function($scope){
+  .controller('appCtrl', ['$scope', '$interval',
+      function($scope, $interval){
 
         vm = this
         
@@ -29,6 +29,15 @@ angular.module('myApp')
           vm.currentIndex++;
           }
         };
+
+      //vm.mode = 'query';
+      //vm.determinateValue = 0;
+      //$interval(function() {
+        //vm.determinateValue += 1;
+        //if (vm.determinateValue > 100) {
+          //vm.determinateValue = 0; 
+        //}
+      //}, 10, 0, true);
 
      }]);
 
@@ -58,7 +67,7 @@ angular.module('myApp')
                     if(scope.direction === 'right') startPoint = -startPoint;
 
                     tl.fromTo(element, 0.5, { left: startPoint}, {left:0, ease: Ease.easeInOut, onComplete: done})
-                        .fromTo(element.find('.title'), 0.5, { left: -200, alpha: 0}, {left:0, alpha:1, ease:Ease.easeInOut} )
+                        .fromTo(element.find('.title'), 0.5, { left: 800,  alpha: 0}, {left:0, alpha:1, ease:Ease.easeInOut} )
                         .fromTo(element.find('.subtitle'), 0.5, { left: -200, alpha: 0}, {left:0, alpha:1, ease:Ease.easeInOut} )
                         .fromTo(element.find('.avatar'), 0.5, { left: 800, alpha: 0}, {left:300, alpha:1, ease:Ease.easeInOut} );
                 }
