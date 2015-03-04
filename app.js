@@ -13,7 +13,7 @@ angular.module('myApp')
         };
 
         vm.slides = [
-            {quote: 'Test1'},
+            {quote: 'Test1. He hiadas asd asdf sdf fssdf '},
             {quote: 'Test2'},
             {quote: 'Sample'}
         ];
