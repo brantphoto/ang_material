@@ -1,11 +1,21 @@
-angular.module('myApp', ['ngMaterial', 'ngAnimate', 'ngMessages', 'ngAria']);
+angular.module('myApp', ['ngMaterial', 'ngAnimate', 'ngMessages', 'ngAria','ui.router']);
+
+//angular.module('myApp')
+  //.config(function($stateProvider){
+    //$stateProvider.state('home',
+      //{
+        //url: 'contacts/{contacts}',
+        //template: "Hi There"
+      //}
+    //);
+  //});
+
 
 angular.module('myApp')
   .controller('appCtrl', ['$scope', '$interval',
       function($scope, $interval){
 
-        vm = this
-        
+        vm = this;
         vm.currentIndex = 0;
 
         vm.submit = function() {
