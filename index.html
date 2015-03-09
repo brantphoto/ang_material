@@ -3,68 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
-  <link rel="stylesheet" href="node_modules/angular-material/default-theme.css">
   <link rel="stylesheet" href="style.css">
   <title></title>
 </head>
+
 <body ng-app="myApp">
-  <div ng-controller="appCtrl as ac">
+  <div ng-controller="appCtrl as ac" layout="column">
+    <div class="navbar">
 
-      <div layout="row">
-        <div flex="33">
-          <form name="userForm" ng-submit="ac.submit()">
+    </div>
+    <div class="photo-show">
 
-          <md-input-container>
-            <label>User Name</label>
-            <input name="userName" ng-model="userName" required md-maxlength="10" minlength="4">
-            <div ng-messages="userForm.userName.$error" >
-              <div ng-message="required">*Required Field</div>
-              <div ng-message="md-maxlength">Username must not be longer than 10 characters.</div>
-              <div ng-message="minlength">Username must not be shorter than 4 characters.</div>
-            </div>
-          </md-input-container>
+    </div>
+    <div class="hand-shake">
 
-          <md-input-container>
-            <label>Email</label>
-            <input type="email" name="email" ng-model="email" required>
-            <div ng-messages="userForm.email.$error" >
-              <div ng-message="required">*Required Field</div>
-              <div ng-message="email">Must be a valid email address.</div>
-            </div>
-          </md-input-container>
-        </form>
-        <!--<md-progress-circular md-mode="determinate" value="{{ac.determinateValue}}" md-diameter="100"></md-progress-circular>-->
+    </div>
+    <div class="testimonials" layout="row" layout-wrap>
+      <div flex-gt-sm="50" flex-sm="100" style="overflow:hidden;">
+        <img src="test1.jpg" style="-webkit-filter: blur(30px); -moz-filter: blur(30px);
+        -o-filter: blur(30px); -ms-filter: blur(30px); width:100%;">
 
-        </div> <!-- flex 33 -->
-
-        <div flex="66">
-
-          <md-button class="md-raised md-primary" type="submit" ng-click="ac.changeSlide()">
-              Button
-          </md-button>
-
-        </div> <!-- flex 66 -->
-
-      </div> <!-- row -->
-
-      <div layout="row" layout-align="center center">
-        <!--<svg height="100" width="100">-->
-            <!--<circle cx="50" cy="50" r="40" stroke="white" stroke-width="4"  />-->
-        <!--</svg>-->
-
-        <div class="slider">
-          <svg height="500" width="500" style="display:inherit;margin:0 auto;">
-              <circle cx="50%" cy="250" r="200" stroke="white" stroke-width="4" fill="none" />
-          </svg>
-
-          <div ng-repeat="slide in ac.slides"
-            ng-hide="ac.currentIndex !== $index"
-            class="slide slide-animation">
-            <h1 class="title"><span>{{slide.quote}}</span></h1>
-          </div>
-        </div> 
+      </div>
+      <div flex-gt-sm="50" flex-sm="100">
+        <img src="test2.jpg" style="width:100%;">
       </div>
 
+    </div>
+
+
+    <div layout="row" layout-align="center center">
+      <div class="slider">
+        <svg height="500" width="500" style="display:inherit;margin:0 auto;">
+            <circle cx="50%" cy="250" r="200" stroke="white" stroke-width="4" fill="none" />
+        </svg>
+
+        <div ng-repeat="slide in ac.slides"
+          ng-hide="ac.currentIndex !== $index"
+          class="slide slide-animation">
+          <h1 class="title"><span>{{slide.quote}}</span></h1>
+        </div>
+      </div> 
+    </div>
+
+    <section class="copy-one">
+
+    </section>
+
+    <section class="copy-two">
+
+    </section>
+    <section class="map-section">
+
+    </section>
   </div> <!-- controller -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

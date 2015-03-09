@@ -86,4 +86,28 @@ angular.module('myApp')
                 }
             }
         };
-    }); 
+    });
+
+  angular.module('myApp')
+    .directive('pwCheck', function() {
+
+      return {
+        require: 'ngModel',
+        scope: {
+            otherModelValue: '=pwCheck'
+        },
+        link: function(scope, element, attributes, ctrl) {
+
+          ctrl.$validators.pwCheck = function(modelValue) {
+            if (ctrl.$isEmpty(modelValue)) {
+              // consider empty models to be valid
+              return true;
+            }
+            return modelValue === scope.otherModelValue;
+          };
+        }
+      };
+    });
+
+
+
