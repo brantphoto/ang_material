@@ -9,12 +9,59 @@
 
 <body ng-app="myApp" scroll>
   <div ng-controller="appCtrl as ac" layout="column">
-    <div class="navbar">
+
+    <!--navbar start-->
+    <section class="navbar" layout="row">
+      <div layout="row" flex="100" layout-align="center start" layout-wrap layout-padding >
+        <div flex-sm="100" layout="row">
+          <h1>
+            CITATIONS
+          </h1>
+          <h1 style="color:red;">
+            X
+          </h1>
+          <h1>
+            DISMISSED
+          </h1>
+        </div>
+        <div flex-sm="100" hide-sm>
+            <div layout="row" layout-padding layout-align="center center">
+              <h4>
+                Speeding Tickets? DUI?  <i>Call Richird M. Chaskin</i>
+              </h4>
+              <md-button class="md-raised md-warn">
+                (213) 383-8860
+              </md-button>
+            </div>
+            <!--<div style="align-self: flex-end;">-->
+              <!--<h4>-->
+                <!--<i>-->
+                  <!--Call Richard M. Chaskin, Attorney at Law-->
+                <!--</i>-->
+              <!--</h4>-->
+            <!--</div>-->
+        </div>
+      </div>
+    </section>
+    <!-- navbar end -->
+
+    <!--slideshow start-->
+    <div class="photo-show" layout="row">
+      <div class="slide-image" flex="100" layout="column" layout-align="center center">
+        <h1>
+          OUR EXPERIENCE
+        </h1>
+        <h2>
+          MAKES THE DIFFERENCE
+        </h2>
+        <md-button class="md-raised md-warn">
+          WATCH THE VIDEO
+        </md-button>
+      </div>
 
     </div>
-    <div class="photo-show">
+    <!-- slideshow end -->
 
-    </div>
     <div class="hand-shake">
 
     </div>

@@ -4,13 +4,37 @@ body {
 }
 
 .navbar {
-  height:100px;
   background-color:black;
+  color:white;
+}
+
+.navbar h1,h2,h3,h4,h5 {
+  margin: 0 auto; 
+  padding: 4px;
 }
 
 .photo-show {
-  height: 760px;
-  background-color:gray;
+}
+
+.photo-show .slide-image {
+  background: url(assets/images/slide1.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+      -o-background-size: cover;
+        background-size: cover;
+        height:750px;
+        color:white;
+}
+
+.slide-image h1 {
+  font-size:75px;
+  margin: 0 auto;
+}
+
+.slide-image h2 {
+  margin: 10px 0;
+  background-color: rgba(0,0,0,0.5);
+  padding:3px;
 }
 
 .hand-shake {
