@@ -1,4 +1,4 @@
-angular.module('myApp', ['ngMaterial', 'ngAnimate', 'ngMessages', 'ngAria','ui.router']);
+angular.module('myApp', ['ngMaterial', 'ngAnimate', 'ngMessages', 'ngAria','zumba.angular-waypoints']);
 
 //angular.module('myApp')
   //.config(function($stateProvider){
@@ -109,5 +109,11 @@ angular.module('myApp')
       };
     });
 
+//angular.module('myApp')
+  //.directive("scroll", function ($window) {
+    //return function(scope, element, attrs) {
 
+    //element.$observe(jj
+    //};
+  //});
 
