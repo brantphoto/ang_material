@@ -12,10 +12,13 @@ angular.module('myApp', ['ngMaterial', 'ngAnimate', 'ngMessages', 'ngAria','zumb
 
 
 angular.module('myApp')
-  .controller('appCtrl', ['$scope', '$interval',
-      function($scope, $interval){
+  .controller('appCtrl', ['$scope', '$interval', '$mdDialog',
+      function($scope, $interval, $mdDialog){
 
         vm = this;
+        vm.photos = [{},{},{},{},{}];
+
+        vm.photosIndex = 0;
         vm.currentIndex = 0;
 
         vm.submit = function() {
@@ -49,7 +52,35 @@ angular.module('myApp')
         //}
       //}, 10, 0, true);
 
+        // after this line VIDEO POPUP LOGIC
+
+        vm.showAdvanced = function(ev) {
+          $mdDialog.show({
+            controller: DialogController,
+            template: '<md-dialog><iframe width="560" height="315" src="https://www.youtube.com/embed/1AKslgGPwnY?autoplay=1" frameborder="0" allowfullscreen></iframe></md-dialog>',
+            targetEvent: ev,
+          })
+          .then(function(answer) {
+            $scope.alert = 'You said the information was "' + answer + '".';
+          }, function() {
+            $scope.alert = 'You cancelled the dialog.';
+          });
+        };
+
+
      }]);
+
+function DialogController($scope, $mdDialog) {
+  $scope.hide = function() {
+    $mdDialog.hide();
+  };
+  $scope.cancel = function() {
+    $mdDialog.cancel();
+  };
+  $scope.answer = function(answer) {
+    $mdDialog.hide(answer);
+  };
+}
 
 
 angular.module('myApp')
