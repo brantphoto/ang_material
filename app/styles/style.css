@@ -8,7 +8,7 @@ body {
 }
 
 .navbar {
-  background-color:black;
+  background-color: #1a1a1a;
   color:white;
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 .photo-show .slide-image {
-  background: url(assets/images/slide1.jpg) no-repeat center center;
+  background: url(../images/slide1.jpg) no-repeat center center;
   -webkit-background-size: cover;
     -moz-background-size: cover;
       -o-background-size: cover;
