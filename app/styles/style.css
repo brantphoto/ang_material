@@ -21,25 +21,60 @@ body {
 }
 
 .photo-show .slide-image {
-  background: url(../images/slide1.jpg) no-repeat center center;
-  -webkit-background-size: cover;
-    -moz-background-size: cover;
-      -o-background-size: cover;
+  /*background: url(../images/slide1.jpg) no-repeat center center;*/
+  /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+      /*-o-background-size: cover;*/
         background-size: cover;
+        width: inherit;
         height:750px;
         color:white;
 }
 
 .slide-image h1 {
-  font-size:75px;
+  font-size:70px;
   margin: 0 auto;
 }
 
 .slide-image h2 {
   margin: 10px 0;
   background-color: rgba(0,0,0,0.5);
-  padding:3px;
+  padding: 3px 9px;
+  font-size:30px;
 }
+
+@media (max-width: 600px) {
+  .navbar h1 {
+    font-size:20px;
+  }
+
+  .photo-show .slide-image {
+    height: 100%;
+  }
+
+  .slide-image h1 {
+    font-size: 25px;
+  }
+
+  .slide-image h2 {
+    font-size: 15px;
+  }
+
+  .photo-show .slide-image { 
+    height: 500px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .slide-image h1 {
+    font-size: 48px;
+  }
+
+  .slide-image h2 {
+    font-size: 20px;
+  }
+}
+
 
 .hand-shake {
   height: 500px;
@@ -69,7 +104,7 @@ body {
     height: 600px;
     overflow: hidden;
     position: relative;
-    background-image: url(wallpaper.jpg);
+    background-image: url(../images/wallpaper.jpg);
     /*background: #e6e6e6;*/
     margin-top: 20px;
 }

@@ -16,7 +16,29 @@ angular.module('myApp')
       function($scope, $interval, $mdDialog){
 
         vm = this;
-        vm.photos = [{},{},{},{},{}];
+        vm.photos = [
+                      {lineOne: "SPEEDING TICKETS?",
+                      lineTwo: "LET US HELP",
+                      url: 'images/cars.jpg'
+                      },
+                      {lineOne: "SUCCESS RATE",
+                      lineTwo: "OF OVER 90%",
+                      url: 'images/catalina.jpg'
+                      },
+                      {lineOne: "OUR EXPERIENCE",
+                      lineTwo: "MAKES THE DIFFERENCE",
+                      url: 'images/slide1.jpg'
+                      },
+                      {lineOne: "OUR CLIENTS",
+                      lineTwo: "GET RESULTS",
+                      url: 'images/slide4.jpg'
+                      },
+                      {lineOne: "GOOD LAWYERS",
+                      lineTwo: "HAVE MORE FUN",
+                      url: 'images/horse.jpg'
+                      }
+        ];
+
 
         vm.photosIndex = 0;
         vm.currentIndex = 0;
@@ -119,26 +141,65 @@ angular.module('myApp')
         };
     });
 
-  angular.module('myApp')
-    .directive('pwCheck', function() {
+    angular.module('myApp')
+      .animation('.slide-image-animation', function () {
+        return {
+          beforeAddClass: function (element, className, done) {
+            if (className == 'ng-hide') {
+              var scope = element.scope(),
+              finishPoint = element.parent().width();
+              console.log(element.parent().width());
 
-      return {
-        require: 'ngModel',
-        scope: {
-            otherModelValue: '=pwCheck'
-        },
-        link: function(scope, element, attributes, ctrl) {
+              //if(scope.direction !== 'right') finishPoint = -finishPoint;
 
-          ctrl.$validators.pwCheck = function(modelValue) {
-            if (ctrl.$isEmpty(modelValue)) {
-              // consider empty models to be valid
-              return true;
+              TweenLite.to(element, 0.5, {left:500, ease: Ease.easeInOut, onComplete: done});
             }
-            return modelValue === scope.otherModelValue;
-          };
-        }
-      };
-    });
+            else {
+              done();
+            }
+          },
+          removeClass: function (element, className, done) {
+            if (className == 'ng-hide') {
+              var scope = element.scope(),
+              startPoint = element.parent().width(),
+              tl = new TimelineLite();
+
+              console.log(tl);
+              //if(scope.direction === 'right') startPoint = -startPoint;
+              tl.fromTo(element.find('slide-image'), 1, {alpha:1}, {alpha:0, ease: Ease.easeInOut, onComplete: done});
+
+              //tl.fromTo(element, 0.5, { left: startPoint}, {left:0, ease: Ease.easeInOut, onComplete: done})
+                //.fromTo(element.find('.title'), 0.5, { left: 800,  alpha: 0}, {left:0, alpha:1, ease:Ease.easeInOut} )
+                //.fromTo(element.find('.subtitle'), 0.5, { left: -200, alpha: 0}, {left:0, alpha:1, ease:Ease.easeInOut} )
+                //.fromTo(element.find('.avatar'), 0.5, { left: 800, alpha: 0}, {left:300, alpha:1, ease:Ease.easeInOut} );
+              }
+              else {
+                  done();
+              }
+            }
+        };
+      });
+
+  //angular.module('myApp')
+    //.directive('pwCheck', function() {
+
+      //return {
+        //require: 'ngModel',
+        //scope: {
+            //otherModelValue: '=pwCheck'
+        //},
+        //link: function(scope, element, attributes, ctrl) {
+
+          //ctrl.$validators.pwCheck = function(modelValue) {
+            //if (ctrl.$isEmpty(modelValue)) {
+              //// consider empty models to be valid
+              //return true;
+            //}
+            //return modelValue === scope.otherModelValue;
+          //};
+        //}
+      //};
+    //});
 
 //angular.module('myApp')
   //.directive("scroll", function ($window) {

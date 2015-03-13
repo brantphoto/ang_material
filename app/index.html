@@ -13,7 +13,7 @@
     <!--navbar start-->
     <section class="navbar" layout="row">
       <div layout="row" flex="100" layout-align="center start" layout-wrap layout-padding >
-        <div flex-sm="100" layout="row">
+        <div layout="row" layout-align="center center">
           <h1>
             CITATIONS
           </h1>
@@ -27,9 +27,9 @@
         <div flex-sm="100" hide-sm>
             <div layout="row" layout-padding layout-align="center center">
               <h4>
-                Speeding Tickets? DUI?  <i>Call Richird M. Chaskin</i>
+                Speeding Tickets? DUI?  <i>Call Richard M. Chaskin</i>
               </h4>
-              <md-button class="md-raised md-warn">
+              <md-button class="md-raised md-warn" style="margin-left:15px">
                 (213) 383-8860
               </md-button>
             </div>
@@ -43,77 +43,71 @@
         </div>
       </div>
     </section>
-    <!-- navbar end -->
+     <!--navbar end -->
 
     <!--slideshow start-->
     <div class="photo-show" layout="row">
-      <div class="slide-image" flex="100" layout="column" layout-align="center center">
-        <h1 hide show-gt-sm>
-          OUR EXPERIENCE
+      <div class="slide-image slide-image-animation" flex="100" layout="column" layout-align="center center" ng-repeat="photo in ac.photos" ng-hide="ac.photosIndex !== $index" ng-style="{'background': 'url({{photo.url}}) no-repeat center center','width': '100%','background-size':'cover'}">
+        <h1>
+          {{photo.lineOne}}
         </h1>
-        <h2 hide show-sm>
-          OUR EXPERIENCE
+        <h2>
+          {{photo.lineTwo}}
         </h2>
-        <h2 hide show-gt-sm>
-          MAKES THE DIFFERENCE
-        </h2>
-        <h4 hide show-sm>
-          MAKES THE DIFFERENCE
-        </h4>
         <md-button ng-click="ac.showAdvanced($event)" class="md-raised md-warn">
           WATCH THE VIDEO
         </md-button>
         <div layout="row">
           <svg ng-repeat="i in ac.photos" height="40" width="25" style="display:inherit;margin:0 auto;">
-              <circle ng-class="{'red-dot': ac.photosIndex === $index}" cx="50%" cy="50%" r="8" stroke="none" fill="white" ng-click="ac.photosIndex = $index" />
+            <circle ng-class="{'red-dot': ac.photosIndex === $index}" cx="50%" cy="50%" r="8" stroke="none" fill="white" ng-click="ac.photosIndex = $index" />
           </svg>
         </div>
       </div>
 
     </div>
-    <!-- slideshow end -->
+     <!--slideshow end-->
 
-    <!-- <div class="hand-shake">
+     <!--<div class="hand-shake">-->
 
-    </div>
-    <div class="testimonials" layout="row" layout-wrap zum-waypoint="mark2" down="flags.down" up="flags.up" offset="50%" ng-hide="mark2.flags.up">
-      <div flex-gt-sm="50" flex-sm="100">
-        <img src="test1.jpg" style="-webkit-filter: blur(30px); -moz-filter: blur(30px);
-        -o-filter: blur(30px); -ms-filter: blur(30px); width:100%;">
+    <!--</div>-->
+    <!--<div class="testimonials" layout="row" layout-wrap zum-waypoint="mark2" down="flags.down" up="flags.up" offset="50%" ng-hide="mark2.flags.up">-->
+      <!--<div flex-gt-sm="50" flex-sm="100">-->
+        <!--<img src="test1.jpg" style="-webkit-filter: blur(30px); -moz-filter: blur(30px);-->
+        <!---o-filter: blur(30px); -ms-filter: blur(30px); width:100%;">-->
 
-      </div>
-      <div flex-gt-sm="50" flex-sm="100">
-        <img src="test2.jpg" style="width:100%;">
-      </div>
+      <!--</div>-->
+      <!--<div flex-gt-sm="50" flex-sm="100">-->
+        <!--<img src="test2.jpg" style="width:100%;">-->
+      <!--</div>-->
 
-    </div>
+    <!--</div>-->
 
 
-    <div layout="row" layout-align="center center">
-      <div class="slider">
-        <svg height="500" width="500" style="display:inherit;margin:0 auto;">
-            <circle cx="50%" cy="250" r="200" stroke="white" stroke-width="4" fill="none" />
-        </svg>
+    <!--<div layout="row" layout-align="center center">-->
+      <!--<div class="slider">-->
+        <!--<svg height="500" width="500" style="display:inherit;margin:0 auto;">-->
+            <!--<circle cx="50%" cy="250" r="200" stroke="white" stroke-width="4" fill="none" />-->
+        <!--</svg>-->
 
-        <div ng-repeat="slide in ac.slides"
-          ng-hide="ac.currentIndex !== $index"
-          class="slide slide-animation">
-          <h1 class="title"><span>{{slide.quote}}</span></h1>
-        </div>
-      </div>
-    </div>
+        <!--<div ng-repeat="slide in ac.slides"-->
+          <!--ng-hide="ac.photosIndex !== $index"-->
+          <!--class="slide slide-animation">-->
+          <!--<h1 class="title"><span>{{slide.quote}}</span></h1>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
 
-    <section class="copy-one">
+    <!--<section class="copy-one">-->
 
-    </section>
+    <!--</section>-->
 
-    <section class="copy-two">
+    <!--<section class="copy-two">-->
 
-    </section>
-    <section class="map-section">
+    <!--</section>-->
+    <!--<section class="map-section">-->
 
-    </section>
-  </div>  --><!-- controller -->
+    <!--</section>-->
+  </div>  <!--  controller -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenMax.min.js"></script>
@@ -123,6 +117,6 @@
   <script src="../node_modules/angular-aria/angular-aria.js"></script>
   <script src="../node_modules/angular-material/angular-material.js"></script>
   <script src="../node_modules/angular-messages/angular-messages.js"></script>
-  <script src="app.js"></script>
+  <script src="scripts/app.js"></script>
 </body>
 </html>

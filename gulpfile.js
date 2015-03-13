@@ -23,7 +23,7 @@ var paths = {
      
  styles: ['styles/**/*.css'],
  html: ['index.html'],
- images: ['images/**/*.png'],
+ images: ['images/**/*.png', 'images/**/*.jpg'],
  extras: ['crossdomain.xml', 'humans.txt', 'manifest.appcache', 'robots.txt', 'favicon.ico'],
 };
  
