@@ -70,7 +70,7 @@ angular.module('myApp')
       //$interval(function() {
         //vm.determinateValue += 1;
         //if (vm.determinateValue > 100) {
-          //vm.determinateValue = 0; 
+         //vm.determinateValue = 0;
         //}
       //}, 10, 0, true);
 
@@ -147,16 +147,12 @@ angular.module('myApp')
          return {
           addClass: function(element, className, done) {
             element.css('opacity',1);
-            TweenMax.to(element, 1, {css:{opacity:0}, ease: Ease.easeInOut, onComplete: done});
+            TweenMax.to(element, 1.2, {css:{opacity:0}, onComplete: done});
             //done();
           },
-          leave: function(element, done) {
-            console.log("leave");
-            done();
-              //element.css('opacity', 1);
-              //jQuery(element).animate({
-                //opacity: 0
-              //}, done);
+          beforeRemoveClass: function(element, className, done) {
+            element.css('opacity', 0);
+            TweenMax.to(element, 1.2, {css:{opacity:1}, onComplete: done});
           }
         }
       });
