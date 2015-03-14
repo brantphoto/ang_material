@@ -141,44 +141,60 @@ angular.module('myApp')
         };
     });
 
-    angular.module('myApp')
-      .animation('.slide-image-animation', function () {
-        return {
-          beforeAddClass: function (element, className, done) {
-            if (className == 'ng-hide') {
-              var scope = element.scope(),
-              finishPoint = element.parent().width();
-              console.log(element.parent().width());
 
-              //if(scope.direction !== 'right') finishPoint = -finishPoint;
-
-              TweenLite.to(element, 0.5, {left:500, ease: Ease.easeInOut, onComplete: done});
-            }
-            else {
-              done();
-            }
+     angular.module('myApp')
+       .animation('.slide-image-animation', function () {
+         return {
+          addClass: function(element, className, done) {
+            element.css('opacity',1);
+            TweenMax.to(element, 1, {css:{opacity:0}, ease: Ease.easeInOut, onComplete: done});
+            //done();
           },
-          removeClass: function (element, className, done) {
-            if (className == 'ng-hide') {
-              var scope = element.scope(),
-              startPoint = element.parent().width(),
-              tl = new TimelineLite();
-
-              console.log(tl);
-              //if(scope.direction === 'right') startPoint = -startPoint;
-              tl.fromTo(element.find('slide-image'), 1, {alpha:1}, {alpha:0, ease: Ease.easeInOut, onComplete: done});
-
-              //tl.fromTo(element, 0.5, { left: startPoint}, {left:0, ease: Ease.easeInOut, onComplete: done})
-                //.fromTo(element.find('.title'), 0.5, { left: 800,  alpha: 0}, {left:0, alpha:1, ease:Ease.easeInOut} )
-                //.fromTo(element.find('.subtitle'), 0.5, { left: -200, alpha: 0}, {left:0, alpha:1, ease:Ease.easeInOut} )
-                //.fromTo(element.find('.avatar'), 0.5, { left: 800, alpha: 0}, {left:300, alpha:1, ease:Ease.easeInOut} );
-              }
-              else {
-                  done();
-              }
-            }
-        };
+          leave: function(element, done) {
+            console.log("leave");
+            done();
+              //element.css('opacity', 1);
+              //jQuery(element).animate({
+                //opacity: 0
+              //}, done);
+          }
+        }
       });
+
+    // angular.module('myApp')
+    //   .animation('.slide-image-animation', function () {
+    //     return {
+    //       beforeAddClass: function (element, className, done) {
+    //         if (className == 'ng-hide') {
+    //           var scope = element.scope();
+    //           element.css('opacity',0);
+    //           TweenMax.to(element, 1, {css:{opacity:1}, ease: Ease.easeInOut, onComplete: done});
+    //         }
+    //         else {
+    //           done();
+    //         }
+    //       },
+    //       removeClass: function (element, className, done) {
+    //         if (className == 'ng-hide') {
+    //           // var scope = element.scope(),
+    //           // startPoint = element.parent().width(),
+    //           // tl = new TimelineLite();
+
+    //           // console.log(tl);
+    //           // //if(scope.direction === 'right') startPoint = -startPoint;
+    //           // tl.fromTo(element.find('slide-image'), 3, {alpha:1}, {alpha:0, ease: Ease.easeInOut, onComplete: done});
+
+    //           //tl.fromTo(element, 0.5, { left: startPoint}, {left:0, ease: Ease.easeInOut, onComplete: done})
+    //             //.fromTo(element.find('.title'), 0.5, { left: 800,  alpha: 0}, {left:0, alpha:1, ease:Ease.easeInOut} )
+    //             //.fromTo(element.find('.subtitle'), 0.5, { left: -200, alpha: 0}, {left:0, alpha:1, ease:Ease.easeInOut} )
+    //             //.fromTo(element.find('.avatar'), 0.5, { left: 800, alpha: 0}, {left:300, alpha:1, ease:Ease.easeInOut} );
+    //           }
+    //           else {
+    //               done();
+    //           }
+    //         }
+    //     };
+    //   });
 
   //angular.module('myApp')
     //.directive('pwCheck', function() {

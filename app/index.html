@@ -12,7 +12,7 @@
 
     <!--navbar start-->
     <section class="navbar" layout="row">
-      <div layout="row" flex="100" layout-align="center start" layout-wrap layout-padding >
+      <div layout="row" flex="100" layout-align="center start" layout-wrap layout-padding>
         <div layout="row" layout-align="center center">
           <h1>
             CITATIONS
@@ -46,8 +46,8 @@
      <!--navbar end -->
 
     <!--slideshow start-->
-    <div class="photo-show" layout="row">
-      <div class="slide-image slide-image-animation" flex="100" layout="column" layout-align="center center" ng-repeat="photo in ac.photos" ng-hide="ac.photosIndex !== $index" ng-style="{'background': 'url({{photo.url}}) no-repeat center center','width': '100%','background-size':'cover'}">
+    <div class="photo-show">
+      <div class="slide-image slide-image-animation" layout="column" layout-align="center center" ng-repeat="photo in ac.photos" ng-hide="ac.photosIndex !== $index" ng-style="{'background': 'url({{photo.url}}) no-repeat center center','width': '100%','background-size':'cover'}">
         <h1>
           {{photo.lineOne}}
         </h1>

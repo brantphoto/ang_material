@@ -25,8 +25,6 @@ body {
   /*-webkit-background-size: cover;*/
     /*-moz-background-size: cover;*/
       /*-o-background-size: cover;*/
-        background-size: cover;
-        width: inherit;
         height:750px;
         color:white;
 }
