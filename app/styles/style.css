@@ -82,6 +82,11 @@ body {
   padding-top: 95px;
 }
 
+#lefty, #righty-one, #righty-two, #righty-three,
+#righty-four {
+  opacity: 0;
+}
+
 .hand-shake {
   height: 700px;
   background-color: #080808;

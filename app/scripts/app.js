@@ -157,6 +157,47 @@ angular.module('myApp')
         }
       });
 
+     angular.module('myApp')
+       .animation('.hand-shake-animation', function () {
+         return {
+          addClass: function(element, className, done) {
+            //element.css('opacity',1);
+            TweenMax.to(element.find('#righty-one'), 1, {css:{opacity:0}});
+            TweenMax.to(element.find('#righty-two'), 1, {css:{opacity:0}});
+            TweenMax.to(element.find('#righty-three'), 1, {css:{opacity:0}});
+            TweenMax.to(element.find('#righty-four'), 1, {css:{opacity:0}});
+            TweenMax.to(element.find('#lefty'), 1.2, {css:{opacity:0}, onComplete: done});
+            //element.find('#lefty').css('opacity', 1);
+            //element.find('#righty-one').css('opacity', 1);
+            //element.find('#righty-two').css('opacity', 1);
+            //element.find('#righty-three').css('opacity', 1);
+            //element.find('#righty-four').css('opacity', 1);
+            //tl.fromTo(element.find('#lefty'), .5, {css:{opacity:1}}, {css:{opacity:0}, ease:Ease.easeInOut} )
+              //.fromTo(element.find('#righty-one'), .4, {css:{opacity:1}}, {css:{opacity:0}, ease:Ease.easeInOut} )
+              //.fromTo(element.find('#righty-two'), .4, {css:{opacity:1}}, {css:{opacity:0}, ease:Ease.easeInOut} )
+              //.fromTo(element.find('#righty-three'), .4, {css:{opacity:1}}, {css:{opacity:0}, ease:Ease.easeInOut} )
+              //.fromTo(element.find('#righty-four'), .4, {css:{opacity:1}}, {css:{opacity:0}, ease:Ease.easeInOut} )
+            //done();
+          },
+          removeClass: function(element, className, done) {
+            //element.css('opacity', 0);
+            element.find('#lefty').css('opacity', 0);
+            element.find('#righty-one').css('opacity', 0);
+            element.find('#righty-two').css('opacity', 0);
+            element.find('#righty-three').css('opacity', 0);
+            element.find('#righty-four').css('opacity', 0);
+            var tl = new TimelineLite();
+            tl.fromTo(element.find('#lefty'), .5, {css:{opacity:0}}, {css:{opacity:1}, ease:Ease.easeInOut} )
+              .fromTo(element.find('#righty-one'), .4, {css:{opacity:0}}, {css:{opacity:1}, ease:Ease.easeInOut} )
+              .fromTo(element.find('#righty-two'), .4, {css:{opacity:0}}, {css:{opacity:1}, ease:Ease.easeInOut} )
+              .fromTo(element.find('#righty-three'), .4, {css:{opacity:0}}, {css:{opacity:1}, ease:Ease.easeInOut} )
+              .fromTo(element.find('#righty-four'), .4, {css:{opacity:0}}, {css:{opacity:1}, ease:Ease.easeInOut} )
+
+
+            //TweenMax.to(element, 1.2, {css:{opacity:1}, onComplete: done});
+          }
+        }
+      });
     // angular.module('myApp')
     //   .animation('.slide-image-animation', function () {
     //     return {
