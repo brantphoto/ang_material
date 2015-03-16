@@ -3,8 +3,26 @@ body {
     /*margin: 10px;*/
 }
 
+#lefty {
+  padding-top: 150px;
+}
+
+#righty {
+  padding-top: 95px;
+}
+
 .red-dot {
   fill: #F44336;
+}
+
+.copy-one {
+  height: 580px;
+  background-color: gray;
+}
+
+.copy-two {
+  height: 750px;
+  background-color: #080808;
 }
 
 .navbar {
@@ -42,55 +60,6 @@ body {
   font-size:30px;
 }
 
-@media (max-width: 600px) {
-  .navbar h1 {
-    font-size:20px;
-  }
-
-  .photo-show .slide-image {
-    height: 100%;
-  }
-
-  .slide-image h1 {
-    font-size: 25px;
-  }
-
-  .slide-image h2 {
-    font-size: 15px;
-  }
-
-  .photo-show .slide-image {
-    height: 500px;
-  }
-}
-
-@media (min-width: 600px) and (max-width: 900px) {
-  .slide-image h1 {
-    font-size: 48px;
-  }
-
-  .slide-image h2 {
-    font-size: 20px;
-  }
-}
-
-#lefty {
-  padding-top: 150px;
-}
-
-#righty {
-  padding-top: 95px;
-}
-
-/*#lefty, #righty-one, #righty-two, #righty-three,*/
-/*#righty-four {*/
-  /*opacity: 0;*/
-/*}*/
-
-/*.invis {*/
-  /*opacity: 0;*/
-/*}*/
-
 .hand-shake {
   height: 700px;
   background-color: #080808;
@@ -115,18 +84,76 @@ body {
   max-width:380px;
 }
 
+@media (max-width: 600px) {
+  .navbar h1 {
+    font-size:20px;
+  }
+
+  .photo-show .slide-image {
+    height: 100%;
+  }
+
+  .slide-image h1 {
+    font-size: 25px;
+  }
+
+  .copy-two {
+    height: 500px;
+  }
+
+  .hand-shake {
+    height: 600px;
+  }
+
+  .hand-shake h1 {
+    font-size: 25px;
+  }
+
+  .hand-shake p {
+    max-width: 318px;
+    text-align: center;
+  }
+
+  .slide-image h2 {
+    font-size: 15px;
+  }
+
+  .photo-show .slide-image {
+    height: 500px;
+  }
+
+  #lefty {
+    padding-top: 50px;
+  }
+
+  #righty {
+    padding-top: 40px;
+  }
+
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .slide-image h1 {
+    font-size: 48px;
+  }
+
+  .slide-image h2 {
+    font-size: 20px;
+  }
+}
+
+
+/*#lefty, #righty-one, #righty-two, #righty-three,*/
+/*#righty-four {*/
+  /*opacity: 0;*/
+/*}*/
+
+/*.invis {*/
+  /*opacity: 0;*/
+/*}*/
+
 .testimonials {
   background-color: white;
-}
-
-.copy-one {
-  height: 580px;
-  background-color: gray;
-}
-
-.copy-two {
-  height: 750px;
-  background-color: #080808;
 }
 
 .map-section {
@@ -157,11 +184,6 @@ body {
   margin: 0 auto;
 }
 
-/*h1 > span, h3 > span {*/
-    /*background-color: rgba(244, 249, 251, 0.80);*/
-    /*line-height: 2;*/
-    /*padding: 10px;*/
-/*}*/
 
 .slide > h1 {
     width: 100%;
