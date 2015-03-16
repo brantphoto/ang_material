@@ -82,10 +82,14 @@ body {
   padding-top: 95px;
 }
 
-#lefty, #righty-one, #righty-two, #righty-three,
-#righty-four {
-  opacity: 0;
-}
+/*#lefty, #righty-one, #righty-two, #righty-three,*/
+/*#righty-four {*/
+  /*opacity: 0;*/
+/*}*/
+
+/*.invis {*/
+  /*opacity: 0;*/
+/*}*/
 
 .hand-shake {
   height: 700px;

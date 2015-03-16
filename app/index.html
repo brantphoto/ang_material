@@ -65,13 +65,14 @@
       </div>
     </div>
      <!--slideshow end-->
-    <section class="copy-two" zum-waypoint="hand" down="flags.down" up="flags.up" offset="50%" ng-hide="hand.flags.up">
+    <section class="copy-two">
       <div class="hand-shake">
       </div>
     </section>
 
     <div class="hand-shake">
-      <div layout="row" class="hand-shake-animation" layout-wrap zum-waypoint="mark2" down="flags.down" up="flags.up" offset="50%" ng-hide="mark2.flags.up" >
+      <div layout="row" class="hand-shake-animation" layout-wrap zum-waypoint="mark2"
+      down="flags.down" up="flags.up" offset="20%" ng-hide="mark2.flags.up || ac.triggerHide === false">
         <div flex="50" id="lefty" flex-sm="100" layout="column" layout-align="center center">
           <h1>
             EXPERIENCE IS KEY
@@ -81,7 +82,7 @@
           </p>
         </div>
         <div flex="50" id="righty" flex-sm="100" layout="column" layout-align="center center">
-          <h3 id="righty-one">
+          <h3 class="invis" id="righty-one">
             - SPEEDING TICKETS
           </h3>
           <h3 id="righty-two">
